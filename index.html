@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quizzy</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- REGISTER -->
+
+<div id="registerPage" class="card">
+
+    <h1>Register</h1>
+
+    <input type="text" id="regUsername" placeholder="Username">
+
+    <input type="password" id="regPassword" placeholder="Password">
+
+    <button onclick="registerUser()">Register</button>
+
+    <p>
+        Already have an account?
+        <a href="#" onclick="showLogin()">Login
+        </a>
+    </p>
+
+</div>
+
+<!-- LOGIN -->
+
+<div id="loginPage" class="card hidden">
+
+    <h1>Login</h1>
+
+    <input type="text" id="loginUsername" placeholder="Username">
+
+    <input type="password" id="loginPassword" placeholder="Password">
+
+    <button onclick="loginUser()">Login</button>
+
+    <p>
+        New User?
+        <a href="#" onclick="showRegister()">Register</a>
+    </p>
+
+</div>
+
+<!-- DASHBOARD -->
+
+<div id="dashboardPage" class="card hidden">
+
+    <h1>Quiz Dashboard</h1>
+
+    <h3 id="welcomeUser"></h3>
+
+    <button onclick="startQuiz()">
+        Start Quiz
+    </button>
+
+    <button onclick="clearScores()">
+        Clear All Scores
+    </button>
+
+    <button onclick="deleteCurrentUser()">
+        Delete My Account
+    </button>
+
+    <button onclick="logout()">
+        Logout
+    </button>
+
+    <h2>All Players Scores</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+
+        <tbody id="scoreTable"></tbody>
+    </table>
+
+</div>
+
+<!-- QUIZ -->
+
+<div id="quizPage" class="card hidden">
+
+    <h2 id="question"></h2>
+
+    <div class="timer-box">
+
+        Time Left:
+        <span id="timer">15</span>s
+
+    </div>
+
+    <div id="answers"></div>
+
+</div>
+
+<!-- RESULT -->
+
+<div id="resultPage" class="card hidden">
+
+    <h1>Quiz Completed</h1>
+
+    <h2 id="finalScore"></h2>
+
+    <button onclick="showLeaderboard()">
+        View Leaderboard
+    </button>
+
+</div>
+
+<!-- LEADERBOARD -->
+
+<div id="leaderboardPage" class="card hidden">
+
+    <h1>Leaderboard</h1>
+
+    <table>
+
+        <thead>
+
+        <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Score</th>
+        </tr>
+
+        </thead>
+
+        <tbody id="leaderboardBody"></tbody>
+
+    </table>
+
+    <button onclick="backDashboard()">
+        Back Dashboard
+    </button>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
